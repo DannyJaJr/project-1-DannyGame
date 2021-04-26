@@ -1,13 +1,16 @@
-# Title of Game
+# Bricks Game
+Thie game allows a user to use a paddle by moving left and right to destroy brick from the sky.
 
-Explanation of the game that was built and the deployed link will go here.
 
 # HOW TO PLAY
+A start button allows to try the game over when the user-health is expired. Move the blue pabble at the bottom screen to catch to the ball from falling. 
 
-How to play the game goes here
 
 ## Start Up Screen:
+![BRICKS Logo](./SSS)
+Format: ![Alt Text](url)
 Images of the start up screen go here 
+
 
 # HOW TO INSTALL
 

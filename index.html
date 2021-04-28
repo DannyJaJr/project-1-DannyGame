@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<!-- 
+    <!-- 
     <div class="container2">
         <canvas id="canvas"></canvas>
         <div class="modal" id="modal">
@@ -21,35 +21,43 @@
 
 
     <div id="container">
-        <aside id="top-left"><h2>Bricks Breaker</h2></aside>
-        <aside id="top-right"><h2 id="movement"></h2></aside>
-        <main>
-            <canvas id="game"><!-- play it, a game --></canvas>
-
-
-            <div class="modal" id="modal">
-
-            </div>
-        </main>
-        <aside id="btm-left"><h2>100</h2></aside>
-        <aside id="btm-right"><h2 id="status">play the game</h2></aside>
-        
-        <div class="modal" id= "modal">
-            
+        <div id="top-left">
+            <h2>Bricks Breaker     .</h2> 
+            <button>Start the game</button> 
         </div>
-        <button type="reset" onclick="document.location.reload()">Play Again?</button>
-    </div>
-     
+        <aside id="top-right">
+            <h2 id="movement"></h2>
+        </aside>
+        <main>
+            <canvas id="game">
+                <!-- play it, a game -->
+            </canvas>
+
+            <h1 id="displayFaill"></h1>
+            <h1 id="displayWin"></h1>
+
+        </main>
+        <aside id="btm-left">
+            <h2>100</h2>
+        </aside>
+        <!-- <aside id="btm-right"><h2 id="status">play the game</h2></aside> -->
+        <aside><audio id="btm-rigth" controls controlsList="nodownload"  src="./Mortal Kombat Theme.mp3"></audio>
+        </aside>
+
+       
+        <aside><button type="reset" onclick="document.location.reload()">Reset Click Me</button></aside>
 
 
- 
+       
 
 
 
 
 
-   <script src="paddle.js"></script>
-    <script src="app.js"></script>
+
+
+
+        <script src="app.js"></script>
 
 
 

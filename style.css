@@ -1,5 +1,6 @@
 html,body {
     margin: 0;
+
     padding: 0;
   }
   
@@ -8,19 +9,20 @@ html,body {
     text-align: center;
     background-color: black;
     background-image: url(./destroyed.jpeg);
-    /* background-image: url('../img/dungeonhell.png'); */
+    
     background-size: cover;
     background-repeat: space;
   }
   
   h1, h2 {
     font-family: 'Press Start 2P', monospace;
-    /* font-family: monospace; */
+
+  
     color: goldenrod;
   }
   
   canvas {
-      /* background-image: url(./Earth.jpeg); */
+
       background-repeat: no-repeat;
       background-image: url(./pexels-freestocksorg-449751.jpg);
     /* background-image: url('../img/stone.png'); */
@@ -44,7 +46,8 @@ html,body {
   grid-template-columns: 100px 2fr 100px;
   grid-template-areas: "top-left top-left top-right"
                         "game game game"
-                        "btm-left btm-right btm-right";
+                        
+                        "btm-left btm-rigth btm-right";
   }
   
   #top-left, #top-right, #btm-left, #btm-right {
@@ -75,6 +78,20 @@ html,body {
   }
   
   #btm-right {
-    grid-area: btm-right;
+    grid-area: btm-rigth;
     /* background-color: #222; */
   }
+
+  btn{
+    color: yellow;
+  }
+  
+  /* #displayFaill {
+    font-family: Arial;
+    height: 50vh;
+    width: 50vh;
+    background-image: url(./lost.jpg);
+    justify-content: center;
+    align-items: center;
+
+  } */

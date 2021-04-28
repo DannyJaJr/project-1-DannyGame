@@ -18,20 +18,30 @@ the polygons' shape construction is my blockers, to align them with x and y Axis
 
 # Monday
 - [x] What did you achieve yesterday?
-
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
 1. RESPONSE
+I can say, I finally understand CSS, and able to work with grid property.
+
 2. RESPONSE
+To create animation objects
+
 3. RESPONSE
+Working with many objects
+
 
 # Tuesday
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
 1. RESPONSE
+I created many object and to run the them.
+
 2. RESPONSE
+collision dectection for all objects
+
 3. RESPONSE
+audio control HTML
 
 # Wednesday
 - [x] What did you achieve yesterday?

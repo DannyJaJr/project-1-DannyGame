@@ -25,18 +25,18 @@ game.setAttribute("width", getComputedStyle(game)["width"]);
   
 // }
 
-let ballRadius = 10;
+let ballRadius = 20;
 let x = game.width/2;
 let y = game.height-30;
-let dx = 4;
-let dy = -4;
+let dx = 2;
+let dy = -2;
 let paddleHeight = 10;
-let paddleWidth = 600;
+let paddleWidth = 100 ;
 let paddleX = (game.width-paddleWidth)/2;
 let rightPressed = false;
 let leftPressed = false;
-let brickRowCount = 10;
-let brickColumnCount = 5;
+let brickRowCount = 12;
+let brickColumnCount = 7;
 let brickWidth = 75;
 let brickHeight = 20;
 let brickPadding = 10;
@@ -45,10 +45,25 @@ let brickOffsetLeft = 30;
 let score = 0;
 let lives = 3;
 
+
+const faillure = document.querySelector("#displayFaill")
+
+const winning = document.querySelector("#displayWin");
+
+  
+
+
+
+
+
+
+
+
+
 let bricks = [];
 for(let i=0; i<brickColumnCount; i++) {
     bricks[i] = [];
-    for(var r=0; r<brickRowCount; r++) {
+    for(let r=0; r<brickRowCount; r++) {
         bricks[i][r] = { x: 0, y: 0, status: 1 };
     }
 }
@@ -89,8 +104,11 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATS!");
-                        document.location.reload();
+                        //congratulation for the winner;
+                        winning.innerHTML = "Yon won!"
+                        toggleClass(winning, 'show');
+                        gameIsActive = false;
+                        // document.location.reload();
                     }
                 }
             }
@@ -101,14 +119,19 @@ function collisionDetection() {
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#0095DD";
+    //to alernate the colors
+    let coloreX = (Math.floor(Math.random() *200));
+    let coloreXB = (Math.floor(Math.random() *200));
+    ctx.fillStyle = `rgb(200, ${coloreX}, ${coloreXB})`;
+    
+    // ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
 }
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, game.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "rgb(251, 255, 0)";
     ctx.fill();
     ctx.closePath();
 }
@@ -122,7 +145,7 @@ function drawBricks() {
                 bricks[i][r].y = brickY;
                 ctx.beginPath();
                 ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                ctx.fillStyle = "#0095DD";
+                ctx.fillStyle = "rgb(26, 90, 9)";
                 ctx.fill();
                 ctx.closePath();
             }
@@ -130,14 +153,15 @@ function drawBricks() {
     }
 }
 function drawScore() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText("Score: "+score, 8, 20);
+    const ScorePoint = document.querySelector("#btm-left");
+    ScorePoint.style.backgroundColor = "yellow";
+    ScorePoint.innerHTML = (score);
+ 
 }
 function drawLives() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText("Lives: "+lives, game.width-65, 20);
+   const boxLife= document.querySelector("#movement");
+   boxLife.innerHTML = ("Lives: "+lives)
+
 }
 
 function draw() {
@@ -162,14 +186,17 @@ function draw() {
         else {
             lives--;
             if(!lives) {
-                alert("GAME OVER");
-                document.location.reload();
+               //game over show display if user lost
+               faillure.innerHTML = "Game Over, try again";
+               toggleClass()
+                document.location.reload(faillure, "show");
+                gameIsActive = false;
             }
             else {
                 x = game.width/2;
                 y = game.height-30;
                 dx = 2;
-                dy = -2;
+                // dy = -2;
                 paddleX = (game.width-paddleWidth)/2;
             }
         }

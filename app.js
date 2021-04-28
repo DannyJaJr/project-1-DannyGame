@@ -12,6 +12,8 @@ const ctx = game.getContext("2d");
 game.setAttribute("height", getComputedStyle(game)["height"]);
 game.setAttribute("width", getComputedStyle(game)["width"]);
 
+
+ctx.clearRect(0, 0, game.width, game.height);
 // ctx.fillStyle = "white";
 // ctx.strokeStyle = "red";
 // ctx.lineWidth = 5;
@@ -28,7 +30,7 @@ game.setAttribute("width", getComputedStyle(game)["width"]);
 let ballRadius = 20;
 let x = game.width/2;
 let y = game.height-30;
-let dx = 2;
+let dx = 3;
 let dy = -2;
 let paddleHeight = 10;
 let paddleWidth = 100 ;
@@ -49,6 +51,22 @@ let lives = 3;
 const faillure = document.querySelector("#displayFaill")
 
 const winning = document.querySelector("#displayWin");
+
+const start = document.querySelector("#btn");
+start.innerHTML="Start the game";
+start.style.backgroundColor = "yellow";
+start.style.color ="red";
+start.style.height = "30px";
+start.style.width= "120px";
+
+
+const reset = document.queryCommandValue("#reset");
+// start.style.backgroundColor = "yellow";
+// start.style.color ="red";
+// start.style.height = "30px";
+// start.style.width= "120px";
+
+
 
   
 
@@ -122,6 +140,7 @@ function drawBall() {
     //to alernate the colors
     let coloreX = (Math.floor(Math.random() *200));
     let coloreXB = (Math.floor(Math.random() *200));
+    
     ctx.fillStyle = `rgb(200, ${coloreX}, ${coloreXB})`;
     
     // ctx.fillStyle = "#0095DD";
@@ -187,9 +206,9 @@ function draw() {
             lives--;
             if(!lives) {
                //game over show display if user lost
-               faillure.innerHTML = "Game Over, try again";
-               toggleClass()
-                document.location.reload(faillure, "show");
+               faillure.innerHTML = "Game Over, to try again press 'Reset' and the 'Start' button";
+               toggleClass(faillure, 'show');
+                // document.location.reload
                 gameIsActive = false;
             }
             else {
@@ -214,4 +233,27 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-draw();
+// draw();
+
+
+// btn.addEventListener("click", e => {
+//     console.log(btn);
+//  function srtartTheGame (){
+//      return draw();
+//  }
+//     reset.addEventListener("click", srtartTheGame => {
+//         srtartTheGame ()
+//     })
+
+
+    btn.onclick = function() {
+        return draw();
+    }
+
+    
+    // })
+    
+    // console.log(e.target);
+    // onclick="document.location.reload()
+    // console.log(reset.target);
+

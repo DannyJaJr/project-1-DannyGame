@@ -12,7 +12,7 @@ The game interface uses a paddle to catch the ball from falling, the control is 
 A start button enables the game
 and the reset function to run the application again when the user finished or failed.
 
-![alt text](/start game.png)
+![alt text](./Users/danny/Desktop/SEI-412/unit-1/canvas/project-1/project-1-DannyGame/game over.jpg);
 ![BRICKS Logo](./SSS)
 Format: ![Alt Text](url)
 

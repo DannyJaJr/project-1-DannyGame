@@ -3,28 +3,32 @@ Thie game allows a user to use a paddle by moving left and right to destroy bric
 
 
 # HOW TO PLAY
-A start button allows to try the game over when the user-health is expired. Move the blue pabble at the bottom screen to catch to the ball from falling. 
+ 
+The game interface uses a paddle to catch the ball from falling, the control is operated through a paddle located at the bottom of the screen. The mouse provides a faster control of the paddle, and the right and left are also used for direction. 
+
 
 
 ## Start Up Screen:
+A start button enables the game
+and the reset function to run the application again when the user finished or failed.
+
+![alt text](/start game.png)
 ![BRICKS Logo](./SSS)
 Format: ![Alt Text](url)
-Images of the start up screen go here 
+
 
 
 # HOW TO INSTALL
-
-## Example
 1. *`Fork`* and *`Clone`* this respository to your local machine
 2. Open `index.html` in your browser to play or 
 3. Open the directory in your text editor of choice to view or edit the code
 
-Other install instructions will go here
 
 
 # HOW IT WORKS
-How the game works will go here
-Code snippets go here
+The game provides a colorful environment that allows easy location of all-important keys. A media player with a control function lets music plays for more entertainment.
+To play start the game, use the mouse or the left and right direction. Fallow the ball and prevent it to touch the bottom of the screen, only 3 attempts are permitted, if failed press reset and start to try again. 
+
 
 
 # FUTURE CONSIDERATIONS

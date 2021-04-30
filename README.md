@@ -31,16 +31,4 @@ To play start the game, use the mouse or the left and right direction. Fallow th
 
 
 
-# FUTURE CONSIDERATIONS
 
-Future considerations or stretch goals go here.
-
-
-# PROCESS WORK
-
-## Initial Wireframes:
-Initial Wireframes go here ( images )
-
-## Scratch Work:
-
-Scratch Work goes here

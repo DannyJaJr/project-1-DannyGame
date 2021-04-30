@@ -14,27 +14,16 @@ game.setAttribute("width", getComputedStyle(game)["width"]);
 
 
 ctx.clearRect(0, 0, game.width, game.height);
-// ctx.fillStyle = "white";
-// ctx.strokeStyle = "red";
-// ctx.lineWidth = 5;
-// ctx.fillRect(10, 10, 100, 100);
-// ctx.strokeRect(10, 10, 100, 100);
 
-
-
-// function clearCanvas() {
-//   ctx.clearRect(0, 0, game.width, game.height);
-  
-// }
 
 let ballRadius = 20;
-let x = game.width/2;
-let y = game.height-30;
+let x = game.width / 2;
+let y = game.height - 30;
 let dx = 3;
 let dy = -2;
 let paddleHeight = 10;
-let paddleWidth = 100 ;
-let paddleX = (game.width-paddleWidth)/2;
+let paddleWidth = 100;
+let paddleX = (game.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 let brickRowCount = 12;
@@ -45,22 +34,22 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 let score = 0;
-let lives = 3;
+let lives = 5;
 
 
 const faillure = document.querySelector("#displayFaill")
 
 const winning = document.querySelector("#displayWin");
 
-const start = document.querySelector("#btn");
-start.innerHTML="Start the game";
-start.style.backgroundColor = "yellow";
-start.style.color ="red";
-start.style.height = "30px";
-start.style.width= "120px";
+const btnStart = document.querySelector("#btnStart");
+btnStart.innerHTML = "Start the game";
+btnStart.style.backgroundColor = "yellow";
+btnStart.style.color = "red";
+btnStart.style.height = "30px";
+btnStart.style.width = "120px";
 
 
-const reset = document.queryCommandValue("#reset");
+const btnReset = document.queryCommandValue("#btnReset");
 // start.style.backgroundColor = "yellow";
 // start.style.color ="red";
 // start.style.height = "30px";
@@ -68,7 +57,7 @@ const reset = document.queryCommandValue("#reset");
 
 
 
-  
+
 
 
 
@@ -79,9 +68,9 @@ const reset = document.queryCommandValue("#reset");
 
 
 let bricks = [];
-for(let i=0; i<brickColumnCount; i++) {
+for (let i = 0; i < brickColumnCount; i++) {
     bricks[i] = [];
-    for(let r=0; r<brickRowCount; r++) {
+    for (let r = 0; r < brickRowCount; r++) {
         bricks[i][r] = { x: 0, y: 0, status: 1 };
     }
 }
@@ -91,37 +80,37 @@ document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 
 function keyDownHandler(e) {
-    if(e.code  == "ArrowRight") {
+    if (e.code == "ArrowRight") {
         rightPressed = true;
     }
-    else if(e.code == 'ArrowLeft') {
+    else if (e.code == 'ArrowLeft') {
         leftPressed = true;
     }
 }
 function keyUpHandler(e) {
-    if(e.code == 'ArrowRight') {
+    if (e.code == 'ArrowRight') {
         rightPressed = false;
     }
-    else if(e.code == 'ArrowLeft') {
+    else if (e.code == 'ArrowLeft') {
         leftPressed = false;
     }
 }
 function mouseMoveHandler(e) {
     var relativeX = e.clientX - game.offsetLeft;
-    if(relativeX > 0 && relativeX < game.width) {
-        paddleX = relativeX - paddleWidth/2;
+    if (relativeX > 0 && relativeX < game.width) {
+        paddleX = relativeX - paddleWidth / 2;
     }
 }
 function collisionDetection() {
-    for(let i=0; i<brickColumnCount; i++) {
-        for(var r=0; r<brickRowCount; r++) {
+    for (let i = 0; i < brickColumnCount; i++) {
+        for (var r = 0; r < brickRowCount; r++) {
             var b = bricks[i][r];
-            if(b.status == 1) {
-                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+            if (b.status == 1) {
+                if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
                     dy = -dy;
                     b.status = 0;
                     score++;
-                    if(score == brickRowCount*brickColumnCount) {
+                    if (score == brickRowCount * brickColumnCount) {
                         //congratulation for the winner;
                         winning.innerHTML = "Yon won!"
                         toggleClass(winning, 'show');
@@ -136,30 +125,30 @@ function collisionDetection() {
 
 function drawBall() {
     ctx.beginPath();
-    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+    ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
     //to alernate the colors
-    let coloreX = (Math.floor(Math.random() *200));
-    let coloreXB = (Math.floor(Math.random() *200));
-    
+    let coloreX = (Math.floor(Math.random() * 200));
+    let coloreXB = (Math.floor(Math.random() * 200));
+
     ctx.fillStyle = `rgb(200, ${coloreX}, ${coloreXB})`;
-    
+
     // ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
 }
 function drawPaddle() {
     ctx.beginPath();
-    ctx.rect(paddleX, game.height-paddleHeight, paddleWidth, paddleHeight);
+    ctx.rect(paddleX, game.height - paddleHeight, paddleWidth, paddleHeight);
     ctx.fillStyle = "rgb(251, 255, 0)";
     ctx.fill();
     ctx.closePath();
 }
 function drawBricks() {
-    for(let i=0; i<brickColumnCount; i++) {
-        for(var r=0; r<brickRowCount; r++) {
-            if(bricks[i][r].status == 1) {
-                var brickX = (r*(brickWidth+brickPadding))+brickOffsetLeft;
-                var brickY = (i*(brickHeight+brickPadding))+brickOffsetTop;
+    for (let i = 0; i < brickColumnCount; i++) {
+        for (var r = 0; r < brickRowCount; r++) {
+            if (bricks[i][r].status == 1) {
+                var brickX = (r * (brickWidth + brickPadding)) + brickOffsetLeft;
+                var brickY = (i * (brickHeight + brickPadding)) + brickOffsetTop;
                 bricks[i][r].x = brickX;
                 bricks[i][r].y = brickY;
                 ctx.beginPath();
@@ -175,11 +164,11 @@ function drawScore() {
     const ScorePoint = document.querySelector("#btm-left");
     ScorePoint.style.backgroundColor = "yellow";
     ScorePoint.innerHTML = (score);
- 
+
 }
 function drawLives() {
-   const boxLife= document.querySelector("#movement");
-   boxLife.innerHTML = ("Lives: "+lives)
+    const boxLife = document.querySelector("#movement");
+    boxLife.innerHTML = ("Lives: " + lives)
 
 }
 
@@ -192,39 +181,39 @@ function draw() {
     drawLives();
     collisionDetection();
 
-    if(x + dx > game.width-ballRadius || x + dx < ballRadius) {
+    if (x + dx > game.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    if(y + dy < ballRadius) {
+    if (y + dy < ballRadius) {
         dy = -dy;
     }
-    else if(y + dy > game.height-ballRadius) {
-        if(x > paddleX && x < paddleX + paddleWidth) {
+    else if (y + dy > game.height - ballRadius) {
+        if (x > paddleX && x < paddleX + paddleWidth) {
             dy = -dy;
         }
         else {
             lives--;
-            if(!lives) {
-               //game over show display if user lost
-               faillure.innerHTML = "Game Over, to try again press 'Reset' and the 'Start' button";
-               toggleClass(faillure, 'show');
+            if (!lives) {
+                //game over show display if user lost
+                faillure.innerHTML = "Game Over, to try again press 'Reset' and the 'Start' button";
+                toggleClass(faillure, 'show');
                 // document.location.reload
                 gameIsActive = false;
             }
             else {
-                x = game.width/2;
-                y = game.height-30;
+                x = game.width / 2;
+                y = game.height - 30;
                 dx = 2;
                 // dy = -2;
-                paddleX = (game.width-paddleWidth)/2;
+                paddleX = (game.width - paddleWidth) / 2;
             }
         }
     }
 
-    if(rightPressed && paddleX < game.width-paddleWidth) {
+    if (rightPressed && paddleX < game.width - paddleWidth) {
         paddleX += 7;
     }
-    else if(leftPressed && paddleX > 0) {
+    else if (leftPressed && paddleX > 0) {
         paddleX -= 7;
     }
 
@@ -246,13 +235,52 @@ function draw() {
 //     })
 
 
-    btn.onclick = function() {
-        return draw();
+
+/* <button id="reset" type="reset" onclick="document.location.reload()" >Reset Click Me</button> */
+
+
+
+// btnReset.onclick = function() {
+//     location.reload();
+//     return false;
+// }
+// function onclick(){
+//     document.location.reload();
+// }
+
+function myFunction() {
+    location.reload();
+    return false;
+}
+
+// btnReset.onclick = function() {
+//     onclick();
+//     // location.reload();
+//     return false
+// }
+
+btnStart.onclick = function () {
+    if (gameIsActive = false) {
+        console.log(myFunction());
     }
 
+    return draw();
     
+
+   
+
+}
+
+
+    // type="reset" onclick="document.location.reload()" 
+    // btnReset.addEventListener('click', () => {
+    //     console.log("clicked!") // check  to see if eventListener is working
+    //     location.reload();
+    //     return false
+    // });
+
     // })
-    
+
     // console.log(e.target);
     // onclick="document.location.reload()
     // console.log(reset.target);

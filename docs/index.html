@@ -11,12 +11,12 @@
 
 <body>
     
-
+<h1>Mouse or the left and right direction buttons, press reset then start button</h1>
 
     <div id="container">
         <aside id="top-left">
             <h2>Bricks Breaker   .</h2> 
-            <button id="btn" ">Start</button> 
+            <button id="btnStart" onclick="myFunction()">Start</button> 
         </aside>
         <aside id="top-right">
             <h2 id="movement"></h2>
@@ -36,9 +36,10 @@
         <!-- <aside id="btm-right"><h2 id="status">play the game</h2></aside> -->
         <aside><audio id="btm-rigth" controls controlsList="nodownload"  src="./Mortal Kombat Theme.mp3"></audio>
         </aside>
-
        
-        <aside><button id="reset" type="reset" onclick="document.location.reload()" >Reset Click Me</button></aside>
+        <aside><button id="btnReset" onclick="myFunction()">Reset Click Me</button></aside>
+       
+        <!-- <aside><button id="reset" type="reset" onclick="document.location.reload()" >Reset Click Me</button></aside> -->
 
 
        

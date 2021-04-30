@@ -131,8 +131,7 @@ function drawBall() {
     let coloreXB = (Math.floor(Math.random() * 200));
 
     ctx.fillStyle = `rgb(200, ${coloreX}, ${coloreXB})`;
-
-    // ctx.fillStyle = "#0095DD";
+    
     ctx.fill();
     ctx.closePath();
 }

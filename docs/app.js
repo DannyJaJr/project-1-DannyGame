@@ -222,42 +222,14 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-// draw();
 
-
-// btn.addEventListener("click", e => {
-//     console.log(btn);
-//  function srtartTheGame (){
-//      return draw();
-//  }
-//     reset.addEventListener("click", srtartTheGame => {
-//         srtartTheGame ()
-//     })
-
-
-
-/* <button id="reset" type="reset" onclick="document.location.reload()" >Reset Click Me</button> */
-
-
-
-// btnReset.onclick = function() {
-//     location.reload();
-//     return false;
-// }
-// function onclick(){
-//     document.location.reload();
-// }
 
 function myFunction() {
     location.reload();
     return false;
 }
 
-// btnReset.onclick = function() {
-//     onclick();
-//     // location.reload();
-//     return false
-// }
+
 
 btnStart.onclick = function () {
     if (gameIsActive = false) {
@@ -265,23 +237,8 @@ btnStart.onclick = function () {
     }
 
     return draw();
-    
-
-   
 
 }
 
 
-    // type="reset" onclick="document.location.reload()" 
-    // btnReset.addEventListener('click', () => {
-    //     console.log("clicked!") // check  to see if eventListener is working
-    //     location.reload();
-    //     return false
-    // });
-
-    // })
-
-    // console.log(e.target);
-    // onclick="document.location.reload()
-    // console.log(reset.target);
 

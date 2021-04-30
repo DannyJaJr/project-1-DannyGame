@@ -1,6 +1,7 @@
 
 # Bricks Game
 Thie game allows a user to use a paddle by moving left and right to destroy brick from the sky.
+![codes. screen](/Screenshot.png)
 
 
 # HOW TO PLAY

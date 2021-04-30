@@ -37,5 +37,11 @@ To play start the game, use the mouse or the left and right direction. Fallow th
 ![game, logo](/gamefinished.png)
 
 
+# Techlogies used
+## HTML
+## CSS
+## JAVASCRIPT
+
+
 
 

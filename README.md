@@ -1,3 +1,4 @@
+
 # Bricks Game
 Thie game allows a user to use a paddle by moving left and right to destroy brick from the sky.
 
@@ -10,11 +11,12 @@ The game interface uses a paddle to catch the ball from falling, the control is 
 
 ## Start Up Screen:
 A start button enables the game
-and the reset function to run the application again when the user finished or failed.
+![start, logo](/gameStart.png)
 
-![alt text](./Users/danny/Desktop/SEI-412/unit-1/canvas/project-1/project-1-DannyGame/game over.jpg);
-![BRICKS Logo](./SSS)
-Format: ![Alt Text](url)
+The reset function to run the application again when the user finished or failed.
+![reset, logo](/gamereset.png)
+
+
 
 
 
@@ -22,12 +24,24 @@ Format: ![Alt Text](url)
 1. *`Fork`* and *`Clone`* this respository to your local machine
 2. Open `index.html` in your browser to play or 
 3. Open the directory in your text editor of choice to view or edit the code
+4. Click her for direct acceess: https://dannyjajr.github.io/project-1-DannyGame/ 
+
+![game, start](/startgame.png)
 
 
 
 # HOW IT WORKS
 The game provides a colorful environment that allows easy location of all-important keys. A media player with a control function lets music plays for more entertainment.
-To play start the game, use the mouse or the left and right direction. Fallow the ball and prevent it to touch the bottom of the screen, only 3 attempts are permitted, if failed press reset and start to try again. 
+![media, logo](/gameMedia.png)
+
+To play start the game, use the mouse or the left and right direction. Fallow the ball and prevent it to touch the bottom of the screen, only 5 attempts are permitted, if failed press reset and start to try again. 
+![game, logo](/gamefinished.png)
+
+
+# Techlogies used
+## HTML
+## CSS
+## JAVASCRIPT
 
 
 

@@ -58,15 +58,6 @@ const btnReset = document.queryCommandValue("#btnReset");
 
 
 
-
-
-
-
-
-
-
-
-
 let bricks = [];
 for (let i = 0; i < brickColumnCount; i++) {
     bricks[i] = [];
